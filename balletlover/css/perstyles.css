@@ -1,0 +1,731 @@
+/* Here is my css！！！*/
+
+/* Set background color */
+/* body {
+    background-color: #f3ecee;
+} */
+
+.reflesh {
+    background-color: #F3ECEE;
+}
+
+/* Eliminate Margins */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Set the header style */
+.header {
+    background-color: #CABCBC;
+    opacity: 0.98;
+    width: 100%;
+    /* Fixed header at the top */
+    position: fixed;
+    /* top: 0px; */
+    padding-top: 10px;
+    z-index: 10;
+
+}
+
+/* Set the header “Balllet Lover” format */
+.header1 {
+    text-align: center;
+    margin-right: 15%;
+    margin-bottom: 10px;
+    /* padding-right: 30%;
+    padding-left: 27%; */
+    color: black;
+    font-size: x-large;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    z-index: 5;
+}
+
+.rotateBox {
+    width: 38px;
+    height: 59px;
+    float: right;
+    margin-right: 20px;
+    transform: rotateY(0);
+    animation: spinning 4s linear infinite;
+}
+
+@keyframes spinning {
+
+    0% {
+
+        transform: rotateY(0deg);
+
+    }
+
+    50% {
+
+        transform: rotateY(360deg);
+
+    }
+
+    100% {
+
+        transform: rotateY(720deg);
+
+    }
+}
+
+#playicon {
+
+    margin-top: 9px;
+    margin-right: 10px;
+    width: 40px;
+    height: 40px;
+    color: white;
+    font-size: 2em;
+    float: right;
+
+    display: none;
+
+}
+
+
+
+
+#logo {
+    width: 200px;
+    height: 59px;
+    float: left;
+    margin-left: 10px;
+}
+
+
+/* The following is the navigation on big/small screen */
+/* [ON BIG SCREEN!] */
+/* WRAPPER */
+#hamnav {
+    width: 100%;
+
+    z-index: 1;
+    -webkit-user-select: none;
+    user-select: none;
+    position: relative;
+    display: block;
+}
+
+/* HIDE HAMBURGER & Put it on right */
+#hamnav label,
+#hamburger {
+    display: none;
+    float: right;
+}
+
+
+
+.nav {
+    padding-left: 12%;
+}
+
+/* Set the father labels style  */
+.nav li {
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    /* margin-left: 176px; */
+    margin-left: 5%;
+    margin-right: 5%;
+    float: left;
+    list-style: none;
+    color: black;
+    text-align: center;
+}
+
+/* Set the position */
+ul {
+    margin-top: 0px;
+    background-color: #8D7878;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+/* Set the son labels style */
+.nav ul li {
+    margin-top: 0px;
+    margin-bottom: 5px;
+    padding-left: 16px;
+    padding-right: 18px;
+    float: none;
+    text-decoration-color: black;
+    text-decoration-line: none;
+}
+
+/*hidden the sublist*/
+.nav ul {
+    margin-top: 8px;
+    display: none;
+    position: absolute;
+    background: #978686;
+    opacity: 0.98;
+}
+
+/* display the sublist*/
+.nav li:hover ul {
+    display: block;
+}
+
+
+/* change the decoration & color of text */
+.nav a {
+    text-decoration: none;
+    color: #eaebed;
+}
+
+.nav ul li a {
+    text-decoration: none;
+    color: #f3ecee;
+}
+
+.now a {
+    color: #fbf9fa;
+    font-weight: 600;
+    text-shadow: 2px 1px 5px #eba1e9;
+    font-size: large;
+}
+
+.clearnow a {
+    color: #eaebed;
+    font-weight: 400;
+    text-shadow: none;
+    font-size: 16px;
+}
+
+/* change the font situation while the href is hover  */
+.nav a:hover {
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+
+
+/* [ON SMALL SCREENS!] */
+@media screen and (max-width: 1024px) {
+
+    #hamnav input {
+        display: block;
+        width: 45px;
+        height: 35px;
+        position: absolute;
+        /* top: -7px; */
+        top: -50px;
+        right: 12px;
+
+        cursor: pointer;
+
+        opacity: 0;
+        /* hide this */
+        z-index: 2;
+        /* and place it over the hamburger */
+
+        -webkit-touch-callout: none;
+    }
+
+    /* BREAK INTO VERTICAL MENU */
+    #hamitems a {
+        box-sizing: border-box;
+        display: grid;
+        width: 100%;
+    }
+
+    /* (B) SHOW HAMBURGER ICON */
+    /* #hamnav label {
+        display: inline-block;
+        color: white;
+        background: #a02620;
+        font-style: normal;
+        font-size: 1.2em;
+        padding-left: 10px;
+        padding-top: 5px;
+        padding-right: 10px;
+        padding-bottom: 6px;
+    } */
+
+    /* (C) TOGGLE SHOW/HIDE MENU */
+    #hamitems {
+        display: none;
+        background-color: rgba(255, 255, 255, 0.8);
+
+        animation-duration: 1.3s;
+        animation-name: slidein;
+    }
+
+
+    @keyframes slidein {
+        from {
+            margin-top: 5%;
+            height: 20%;
+            margin-right: -30%;
+            width: 150%;
+        }
+
+        to {
+            margin-top: 0%;
+            height: 100%;
+            margin-right: 0%;
+            width: 100%;
+        }
+    }
+
+
+    #hamnav input:checked~#hamitems {
+        display: grid;
+    }
+
+    #playicon {
+        display: block;
+    }
+
+    .rotateBox {
+        width: 38px;
+        height: 59px;
+        float: left;
+        margin-right: 20px;
+        transform: rotateY(0);
+        animation: spinning 5s linear infinite;
+    }
+
+    .header1 {
+        margin-right: 25%;
+    }
+
+}
+
+
+/* max-width: 680px */
+@media screen and (max-width: 863px) {
+
+    #hamnav input {
+        display: block;
+        width: 45px;
+        height: 40px;
+        position: absolute;
+        /* top: -7px; */
+        top: -110px;
+        right: 5px;
+
+        cursor: pointer;
+
+        opacity: 0;
+        /* hide this */
+        z-index: 2;
+        /* and place it over the hamburger */
+
+        -webkit-touch-callout: none;
+    }
+}
+
+
+
+
+
+
+
+/* Set the overall margin of center  */
+.center {
+    /* margin-left: 100px;
+    margin-right: 100px; */
+    margin-left: 7%;
+    margin-right: 7%;
+    margin-top: 0px;
+}
+
+
+#aboutme {
+    border-bottom: 3px dotted rgb(91, 108, 94);
+}
+
+#education {
+    border-bottom: 3px dotted rgb(91, 108, 94);
+}
+
+#skills {
+    border-bottom: 3px dotted rgb(91, 108, 94);
+}
+
+
+/* Subtitle font setting */
+
+h1 {
+    font-size: 48px;
+    color: #4b4141;
+    font-family: 'Aboreto';
+    /* font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif */
+}
+
+h2 {
+    font-size: 32px;
+    font-weight: 600;
+    /* font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
+    /* font-family: Poppins; */
+    font-family: 'Aboreto';
+    padding-bottom: 16px;
+}
+
+h4 {
+    font-size: 20px;
+    font-weight: 580;
+    font-family: Poppins;
+    padding-top: 12px;
+    padding-bottom: 2px;
+}
+
+h5 {
+    font-size: 18px;
+    font-weight: 540;
+    /* font-family: Poppins; */
+    font-family: 'Gotu', sans-serif;
+    padding-bottom: 2px;
+}
+
+h6 {
+    font-size: 18px;
+    font-weight: 100;
+    font-family: Poppins;
+}
+
+h3 {
+    font-size: 16px;
+    font-weight: 100;
+    /* font-family: Poppins; */
+    font-family: 'Julius Sans One', sans-serif;
+}
+
+p {
+    font-family: 'Gotu', sans-serif;
+}
+
+#perform {
+    margin-top: 11%;
+}
+
+.recenttitle {
+    text-align: center;
+}
+
+@media screen and (max-width: 680px) {
+    #perform {
+        margin-top: 25%;
+    }
+
+}
+
+
+/* create an area for recent show */
+.slider-holder {
+    width: 100%;
+    height: 400px;
+    background-color: yellow;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0px;
+    text-align: center;
+    overflow: hidden;
+
+    /* z-index: 1; */
+    /* position: relative; */
+}
+
+/* create whole area for 3 pictures */
+.image-holder {
+    width: 300%;
+    background-color: #CABCBC;
+    height: 400px;
+    clear: both;
+    position: relative;
+    overflow: hidden;
+
+    -webkit-transition: left 2s;
+    -moz-transition: left 2s;
+    -o-transition: left 2s;
+    transition: left 2s;
+}
+
+/* create one place for 1 picture */
+.slider-image {
+    width: 33.33%;
+    height: 100%;
+    float: left;
+    margin: 0px;
+    padding: 0px;
+    position: relative;
+}
+
+/* move picture when click the button */
+#slider-image-1:target~.image-holder {
+    left: 0px;
+}
+
+#slider-image-2:target~.image-holder {
+    left: -100%;
+}
+
+#slider-image-3:target~.image-holder {
+    left: -200%;
+}
+
+/* create buttons */
+.button-holder {
+    position: relative;
+    top: -22px;
+}
+
+.slider-change {
+    display: inline-block;
+    height: 10px;
+    width: 10px;
+    border-radius: 5px;
+    background-color: #E5D4D4;
+    margin-bottom: 5px;
+    margin-left: 1px;
+    margin-right: 1px;
+}
+
+.slider-change:hover {
+    background-color: #CDAEB1;
+}
+
+
+
+
+.allshows {
+    display: grid;
+    grid-template-columns: 35% 30% 42%;
+    align-items: center;
+    grid-gap: 0.5rem;
+    margin-top: 1.5rem;
+}
+
+.showphoto {
+    width: 100%;
+    height: 250px;
+    grid-column: 1/2;
+    margin-top: 1rem;
+    margin-bottom: 0rem;
+    overflow: hidden;
+    z-index: 1;
+    position: relative;
+}
+
+.effect {
+    height: 100%;
+    width: 100%;
+}
+
+.showphoto:hover {
+    animation-name: moveSquare;
+    animation-duration: 3s;
+}
+
+/* Standard syntax */
+@keyframes moveSquare {
+    0% {
+        left: 0px;
+        top: 0px;
+    }
+
+    50% {
+        background-color: #f3ecee;
+        opacity: 0.4;
+        left: 85%;
+        top: 0px;
+    }
+
+    100% {
+        left: 0px;
+        top: 0px;
+    }
+}
+
+
+
+
+
+
+.showintro {
+    /* width: 350px; */
+    width: 100%;
+    height: 250px;
+    padding: 2rem;
+    grid-column: 2/3;
+    align-self: center;
+    color: black;
+    overflow: hidden;
+}
+
+
+.calander {
+    width: 100%;
+    height: 800px;
+    grid-column: 3/4;
+    grid-row: 1/5;
+}
+
+
+.picture {
+    width: 100%;
+    height: 100%;
+}
+
+.desc {
+    width: 250px;
+    height: 30px;
+    color: black;
+    font-family: fantasy;
+    z-index: 3;
+    bottom: 8px;
+    /* position: absolute; */
+}
+
+
+table,
+td {
+    /* border: 1.5px solid rgb(84, 83, 83); */
+    /* border: 1.5px solid rgb(140, 131, 131); */
+    /* border: 1.5px solid rgb(187, 178, 178); */
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+
+td {
+    text-align: center;
+    color: black;
+    z-index: 3;
+}
+
+table {
+    border-collapse: collapse;
+    font-size: 14px;
+    font-family: Poppins;
+    font-weight: 100;
+    margin: 4px 20px 20px 0px;
+    width: 65%;
+    margin-left: 15%;
+}
+
+
+thead th {
+    /* background-color: rgba(168, 168, 168, 0.8); */
+    background-color: rgb(218, 208, 208);
+    color: rgb(22, 22, 22);
+    padding-top: 8px;
+    padding-bottom: 8px;
+    width: 15%;
+}
+
+thead th.month {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: aliceblue;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    width: 15%;
+}
+
+thead th.eg {
+    background-color: #f3ecee;
+    font-size: 22px;
+    color: rgb(6, 6, 6);
+    padding-top: 8px;
+    padding-bottom: 8px;
+    width: 15%;
+}
+
+tbody td:hover {
+    /* background-color: #dccccd; */
+    background-color: rgb(218, 208, 208);
+}
+
+
+.showon {
+    background-color: rgb(205, 186, 186);
+    border-radius: 200px;
+}
+
+
+
+
+@media screen and (max-width: 1150px) {
+    .allshows {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        align-items: center;
+        grid-gap: 0.5rem;
+        margin-top: 1.5rem;
+    }
+
+    .showphoto {
+        width: 100%;
+        height: 80%;
+        grid-column: 1/2;
+        margin-top: 1rem;
+        margin-bottom: 0rem;
+        overflow: hidden;
+        z-index: 1;
+        position: relative;
+    }
+
+    .showpintro {
+        width: 100%;
+        height: 250px;
+        grid-column: 2/3;
+        margin-top: 1rem;
+        margin-bottom: 0rem;
+        overflow: hidden;
+        z-index: 1;
+        position: relative;
+    }
+
+    table {
+        display: none;
+    }
+
+}
+
+
+@media screen and (max-width: 650px) {
+    .showdetail {
+        display: none;
+    }
+}
+
+
+
+
+
+#insicon {
+    width: 19px;
+    height: 19px;
+    float: right;
+    z-index: 4;
+    bottom: 10px;
+    position: absolute;
+}
+
+
+
+/* Set the margin of footer */
+.footer {
+    width: 86%;
+    height: auto;
+    padding-top: 40px;
+    margin: 0 auto;
+    text-align: center;
+    clear: both;
+}
+
+.icon {
+    width: 37px;
+    height: 59px;
+    float: inline-end;
+    margin: 10px 20px 20px 0;
+    /* visibility: hidden; */
+}

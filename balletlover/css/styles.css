@@ -1,0 +1,1067 @@
+/* Here is my css！！！*/
+
+/* Set background color */
+/* body {
+    background-image: url("https://xiaoqian.neocities.org/myphotos/bg.jpg");
+    background-color: #f3ecee;
+} */
+
+.reflesh {
+    background-color: #F3ECEE;
+}
+
+/* Eliminate Margins */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Set the header style */
+.header {
+    background-color: #CABCBC;
+    opacity: 0.98;
+    width: 100%;
+    /* Fixed header at the top */
+    position: fixed;
+    /* top: 0px; */
+    padding-top: 10px;
+    z-index: 10;
+
+}
+
+/* Set the header “Balllet Lover” format */
+.header1 {
+    text-align: center;
+    margin-right: 15%;
+    margin-bottom: 10px;
+    /* padding-right: 30%;
+    padding-left: 27%; */
+    color: black;
+    font-size: x-large;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    z-index: 5;
+}
+
+#logo {
+    width: 200px;
+    height: 59px;
+    float: left;
+    margin-left: 10px;
+}
+
+.rotateBox {
+    width: 38px;
+    height: 59px;
+    float: right;
+    margin-right: 20px;
+    transform: rotateY(0);
+    animation: spinning 4s linear infinite;
+}
+
+
+@keyframes spinning {
+
+    0% {
+
+        transform: rotateY(0deg);
+
+    }
+
+    50% {
+
+        transform: rotateY(360deg);
+
+    }
+
+    100% {
+
+        transform: rotateY(720deg);
+
+    }
+}
+
+
+#playicon {
+    margin-top: 9px;
+    margin-right: 10px;
+    width: 40px;
+    height: 40px;
+    color: white;
+    font-size: 2em;
+    float: right;
+
+    display: none;
+}
+
+
+
+
+
+
+/* The following is the navigation on big/small screen */
+/* [ON BIG SCREEN!] */
+/* WRAPPER */
+
+#hamnav {
+    width: 100%;
+
+    z-index: 1;
+    -webkit-user-select: none;
+    user-select: none;
+    position: relative;
+    display: block;
+}
+
+/* HIDE HAMBURGER & Put it on right */
+#hamnav label,
+#hamburger {
+    display: none;
+    float: right;
+}
+
+/* To Set hamburger shape */
+#hamnav span {
+    display: block;
+    width: 30px;
+    height: 4px;
+    margin-bottom: 5px;
+    margin-left: 7px;
+    margin-right: 5px;
+    position: relative;
+
+    background: #f3f1f1;
+    border-radius: 3px;
+
+    z-index: 1;
+
+    transform-origin: 4px 0px;
+
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+        background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+        opacity 0.55s ease;
+}
+
+#hamnav span:first-child {
+    transform-origin: 0% 0%;
+}
+
+#hamnav span:nth-last-child(2) {
+    transform-origin: 0% 100%;
+}
+
+/* 
+	 * Transform all the slices of hamburger
+	 * into a crossmark.
+	 */
+#hamnav input:checked~span {
+    opacity: 1;
+    transform: rotate(45deg) translate(-2px, -1px);
+    background: #232323;
+}
+
+/*
+	 * But let's hide the middle one.
+	 */
+#hamnav input:checked~span:nth-last-child(3) {
+    opacity: 0;
+    transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+/*
+	 * Ohyeah and the last one should go the other direction
+	 */
+#hamnav input:checked~span:nth-last-child(2) {
+    transform: rotate(-45deg) translate(0, -1px);
+}
+
+
+
+.nav {
+    padding-left: 12%;
+}
+
+/* Set the father labels style  */
+.nav li {
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    /* margin-left: 176px; */
+    margin-left: 5%;
+    margin-right: 5%;
+    float: left;
+    list-style: none;
+    color: black;
+    text-align: center;
+}
+
+/* Set the position */
+ul {
+    margin-top: 0px;
+    background-color: #8D7878;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+/* Set the son labels style */
+.nav ul li {
+    margin-top: 0px;
+    margin-bottom: 5px;
+    padding-left: 16px;
+    padding-right: 18px;
+    float: none;
+    text-decoration-color: black;
+    text-decoration-line: none;
+}
+
+/*hidden the sublist*/
+.nav ul {
+    margin-top: 8px;
+    display: none;
+    position: absolute;
+    background: #978686;
+    opacity: 0.98;
+}
+
+/* display the sublist*/
+.nav li:hover ul {
+    display: block;
+}
+
+
+/* change the decoration & color of text */
+.nav a {
+    text-decoration: none;
+    color: #eaebed;
+}
+
+.nav ul li a {
+    text-decoration: none;
+    color: #f3ecee;
+}
+
+.now a {
+    color: #fbf9fa;
+    font-weight: 600;
+    text-shadow: 2px 1px 5px #eba1e9;
+    font-size: large;
+}
+
+/* change the font situation while the href is hover  */
+.nav a:hover {
+    font-weight: 600;
+    text-decoration: underline;
+
+}
+
+
+
+/* [ON SMALL SCREENS!] */
+@media screen and (max-width: 1024px) {
+
+    #hamnav input {
+        display: block;
+        width: 40px;
+        height: 35px;
+        position: absolute;
+        /* top: -7px; */
+        top: -50px;
+        right: 12px;
+
+        cursor: pointer;
+
+        opacity: 0;
+        /* hide this */
+        z-index: 2;
+        /* and place it over the hamburger */
+
+        -webkit-touch-callout: none;
+    }
+
+
+    /* BREAK INTO VERTICAL MENU */
+    #hamitems a {
+        box-sizing: border-box;
+        display: grid;
+        width: 100%;
+    }
+
+
+    /* (B) SHOW HAMBURGER ICON */
+    /* #hamnav label {
+        display: inline-block;
+        color: white;
+        background: #a02620;
+        font-style: normal;
+      font-size: 1.2em;
+        padding-left: 10px;
+        padding-top: 5px;
+        padding-right: 10px;
+        padding-bottom: 6px;
+    } */
+
+    /* #hamnav label {
+        display: block;
+        margin-top: 0px;
+        margin-right: 10px;
+        padding-bottom: 6px;
+        width: 40px;
+        height: 40px;
+        color: white;
+        font-size: 1.9em;
+        position: relative;
+    } */
+
+
+
+    /* (C) TOGGLE SHOW/HIDE MENU */
+    #hamitems {
+        display: none;
+        background-color: rgba(255, 255, 255, 0.8);
+        /* padding-top: -20px; */
+
+        animation-duration: 1.3s;
+        animation-name: slidein;
+
+    }
+
+    @keyframes slidein {
+        from {
+            margin-top: 5%;
+            height: 20%;
+            margin-right: -30%;
+            width: 150%;
+        }
+
+        to {
+            margin-top: 0%;
+            height: 100%;
+            margin-right: 0%;
+            width: 100%;
+        }
+    }
+
+
+    #hamnav input:checked~#hamitems {
+        display: grid;
+    }
+
+    #playicon {
+        display: block;
+    }
+
+    .rotateBox {
+        width: 38px;
+        height: 59px;
+        float: left;
+        margin-right: 20px;
+        transform: rotateY(0);
+        animation: spinning 5s linear infinite;
+    }
+
+    .header1 {
+        margin-right: 25%;
+    }
+
+
+}
+
+
+/* max-width: 680px */
+@media screen and (max-width: 863px) {
+
+
+    #hamnav input {
+        display: block;
+        width: 45px;
+        height: 40px;
+        position: absolute;
+        /* top: -7px; */
+        top: -110px;
+        right: 5px;
+        cursor: pointer;
+        opacity: 0;
+        /* hide this */
+        z-index: 2;
+        /* and place it over the hamburger */
+        -webkit-touch-callout: none;
+    }
+
+    .center {
+        padding-top: 30px;
+    }
+
+    .header1 {
+        margin-right: 25%;
+    }
+
+}
+
+
+
+
+
+/* Set the overall margin of center  */
+.center {
+    /* margin-left: 100px;
+    margin-right: 100px; */
+    margin-left: 7%;
+    margin-right: 7%;
+    margin-top: 0px;
+}
+
+#styles {
+    margin-top: 1%;
+}
+
+
+#aboutme {
+    border-bottom: 3px dotted rgb(91, 108, 94);
+}
+
+#education {
+    border-bottom: 3px dotted rgb(91, 108, 94);
+}
+
+#skills {
+    border-bottom: 3px dotted rgb(91, 108, 94);
+}
+
+
+/* Subtitle font setting */
+
+h1 {
+    font-size: 48px;
+    color: #4b4141;
+    /* font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif */
+    font-family: 'Aboreto';
+    /* font-family: 'Cinzel', serif; */
+    /* font-family: 'Marcellus', serif; */
+    /* font-family: 'Julius Sans One', sans-serif; */
+
+}
+
+.lbl-toggle {
+    font-size: 32px;
+    font-weight: 500;
+    font-family: 'Aboreto';
+    padding-bottom: 16px;
+    text-shadow: 1px 1px 3px #933757;
+}
+
+
+h2 {
+    font-size: 32px;
+    font-weight: 600;
+    /* font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
+    font-family: 'Aboreto';
+    padding-bottom: 16px;
+}
+
+h4 {
+    font-size: 20px;
+    font-weight: 580;
+    font-family: Poppins;
+    padding-top: 12px;
+    padding-bottom: 2px;
+}
+
+h5 {
+    font-size: 18px;
+    font-weight: 540;
+    font-family: Poppins;
+    padding-bottom: 2px;
+}
+
+h6 {
+    font-size: 18px;
+    font-weight: 100;
+    font-family: Poppins;
+}
+
+h3 {
+    font-size: 16px;
+    font-weight: 100;
+    /* font-family: Poppins; */
+    /* font-family: 'Aboreto', cursive; */
+    /* font-family: 'Marcellus', serif; */
+    font-family: 'Julius Sans One', sans-serif;
+}
+
+
+
+
+
+.details {
+    font-family: 'Gotu', sans-serif;
+    margin-top: 4%;
+}
+
+
+.effect {
+    height: 95%;
+    width: 96%;
+    border-style: groove;
+    border-color: #7c6868;
+    border-width: 13px;
+}
+
+.picture {
+    width: 100%;
+    height: 100%;
+}
+
+
+.classicalBallet {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    align-items: center;
+    grid-gap: 0.5rem;
+}
+
+.classicalPhoto {
+    width: 95%;
+    height: 400px;
+    grid-column: 1/2;
+    padding: 0.6rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    overflow: hidden;
+    z-index: 1;
+    position: relative;
+}
+
+.classicalText {
+    width: 90%;
+    height: 80%;
+    padding: 1rem 2rem 2rem 2rem;
+    grid-column: 2/3;
+    align-self: center;
+    color: black;
+    z-index: 2;
+}
+
+.classicalPhoto figcaption h2 {
+    width: 40%;
+    height: 30px;
+    top: 10%;
+    right: 10%;
+    color: aliceblue;
+    font-family: fantasy;
+    z-index: 5;
+    position: absolute;
+}
+
+.classicalPhoto figcaption p {
+    width: 400px;
+    height: 20px;
+    top: 80%;
+    left: 60px;
+    color: aliceblue;
+    font-family: fantasy;
+    z-index: 5;
+    position: absolute;
+}
+
+
+/** Create a line under Text*/
+figure.effect h2::after {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 180px;
+    height: 4px;
+    background: #fff;
+    content: '';
+    -webkit-transform: translate3d(0, 10px, 0);
+    transform: translate3d(0, 10px, 0);
+
+    /** Hid the line now*/
+    opacity: 0;
+    -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+    transition: opacity 0.35s, transform 0.35s;
+}
+
+/* figure.effect:hover h2 {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+} */
+
+/** Show the line when the mouse hovers over the img*/
+figure.effect:hover h2::after {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+
+/** Hid the "view xxx" now*/
+figure.effect p {
+    -webkit-transform: translate3d(0, 30%, 0);
+    transform: translate3d(0, 30%, 0);
+    opacity: 0;
+    -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+    transition: opacity 0.35s, transform 0.35s;
+}
+
+/** Show the "view xxx" when the mouse hovers over the img*/
+figure.effect:hover p {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    transition: transform 0.5s;
+}
+
+/** Hid the checkbox(>>little triangle)*/
+input[type='checkbox'] {
+    display: none;
+
+}
+
+
+
+
+
+
+.romanticBallet {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    align-items: center;
+    grid-gap: 0.5rem;
+}
+
+.romanticPhoto {
+    width: 95%;
+    height: 400px;
+    grid-column: 2/3;
+    padding: 0.6rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    overflow: hidden;
+    z-index: 1;
+    position: relative;
+}
+
+.romanticText {
+    width: 90%;
+    height: 80%;
+    padding: 1rem 2rem 2rem 2rem;
+    grid-column: 1/2;
+    align-self: center;
+    color: black;
+}
+
+.romanticPhoto figcaption h2 {
+    width: 40%;
+    height: 30px;
+    top: 10%;
+    left: 10%;
+    color: aliceblue;
+    font-family: fantasy;
+    z-index: 5;
+    position: absolute;
+}
+
+.romanticPhoto figcaption p {
+    width: 350px;
+    height: 20px;
+    top: 80%;
+    right: 0px;
+    color: aliceblue;
+    font-family: fantasy;
+    z-index: 5;
+    position: absolute;
+}
+
+
+.neoclassicalBallet {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    align-items: center;
+    grid-gap: 0.5rem;
+}
+
+.neoclassicalPhoto {
+    width: 95%;
+    height: 400px;
+    grid-column: 1/2;
+    padding: 0.6rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    overflow: hidden;
+    z-index: 1;
+    position: relative;
+}
+
+.neoclassicalText {
+    width: 90%;
+    /* 600px */
+    height: 80%;
+    /* 309px */
+    padding: 1rem 2rem 2rem 1rem;
+    grid-column: 2/3;
+    align-self: center;
+    color: black;
+}
+
+.neoclassicalPhoto figcaption h2 {
+    width: 280px;
+    height: 30px;
+    top: 10%;
+    right: 40px;
+    color: aliceblue;
+    font-family: fantasy;
+    z-index: 5;
+    position: absolute;
+}
+
+.neoclassicalPhoto figcaption p {
+    width: 400px;
+    height: 100px;
+    top: 80%;
+    left: 60px;
+    color: aliceblue;
+    font-family: fantasy;
+    z-index: 5;
+    position: absolute;
+}
+
+
+.contemporaryBallet {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    align-items: center;
+    grid-gap: 0.5rem;
+}
+
+.contemporaryPhoto {
+    width: 95%;
+    height: 400px;
+    grid-column: 2/3;
+    padding: 0.6rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    overflow: hidden;
+    z-index: 1;
+    position: relative;
+}
+
+.contemporaryText {
+    width: 90%;
+    height: 80%;
+    padding: 1rem 2rem 2rem 2rem;
+    grid-column: 1/2;
+    align-self: center;
+    color: black;
+}
+
+.contemporaryPhoto figcaption h2 {
+    width: 310px;
+    height: 35px;
+    top: 10%;
+    left: 80px;
+    color: aliceblue;
+    font-family: fantasy;
+    z-index: 5;
+    position: absolute;
+}
+
+.contemporaryPhoto figcaption p {
+    width: 450px;
+    height: 100px;
+    top: 80%;
+    right: 0px;
+    color: aliceblue;
+    font-family: fantasy;
+    z-index: 5;
+    position: absolute;
+}
+
+
+/* .picture {
+    width: 100%;
+    height: 100%;
+} */
+
+
+
+.desc {
+    width: 250px;
+    height: 30px;
+    color: black;
+    font-family: fantasy;
+    z-index: 3;
+    bottom: 8px;
+    /* position: absolute; */
+}
+
+
+
+
+@media screen and (max-width: 1024px) {
+
+
+    .classicalBallet {
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 20% 80%;
+        align-items: center;
+        grid-gap: 0.5rem;
+    }
+
+    .classicalText {
+        width: 98%;
+        padding: 1.3%;
+        margin-top: 50px;
+        grid-column: 1/2;
+        grid-row: 1/2;
+        align-self: center;
+        color: black;
+        z-index: 2;
+    }
+
+    .classicalPhoto {
+        width: 98%;
+        height: 98%;
+        grid-column: 1/2;
+        grid-row: 2/3;
+        padding: 1.3%;
+        margin-top: -88px;
+        overflow: hidden;
+        z-index: 1;
+        position: relative;
+    }
+
+
+    .romanticBallet {
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 20% 80%;
+        align-items: center;
+        grid-gap: 0.5rem;
+    }
+
+    .romanticText {
+        width: 98%;
+        padding: 1.3%;
+        margin-top: 30px;
+        grid-column: 1/2;
+        grid-row: 1/2;
+        align-self: center;
+        color: black;
+        z-index: 2;
+    }
+
+    .romanticPhoto {
+        width: 98%;
+        height: 98%;
+        grid-column: 1/2;
+        grid-row: 2/3;
+        padding: 1.3%;
+        margin-top: -88px;
+        overflow: hidden;
+        z-index: 1;
+        position: relative;
+    }
+
+    .neoclassicalBallet {
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 20% 80%;
+        align-items: center;
+        grid-gap: 0.5rem;
+    }
+
+    .neoclassicalText {
+        width: 98%;
+        padding: 1.3%;
+        margin-top: 30px;
+        grid-column: 1/2;
+        grid-row: 1/2;
+        align-self: center;
+        color: black;
+        z-index: 2;
+    }
+
+    .neoclassicalPhoto {
+        width: 98%;
+        height: 99%;
+        grid-column: 1/2;
+        grid-row: 2/3;
+        padding: 1.3%;
+        margin-top: -88px;
+        overflow: hidden;
+        z-index: 1;
+        position: relative;
+    }
+
+    .contemporaryBallet {
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 20% 80%;
+        align-items: center;
+        grid-gap: 0.5rem;
+    }
+
+    .contemporaryText {
+        width: 98%;
+        padding: 1.3%;
+        margin-top: 30px;
+        grid-column: 1/2;
+        grid-row: 1/2;
+        align-self: center;
+        color: black;
+        z-index: 2;
+    }
+
+    .contemporaryPhoto {
+        width: 98%;
+        height: 99%;
+        grid-column: 1/2;
+        grid-row: 2/3;
+        padding: 1.3%;
+        margin-top: -88px;
+        overflow: hidden;
+        z-index: 1;
+        position: relative;
+    }
+
+
+    .classicalPhoto figcaption h2 {
+        display: none;
+    }
+
+    .romanticPhoto figcaption h2 {
+        display: none;
+    }
+
+    .neoclassicalPhoto figcaption h2 {
+        display: none;
+    }
+
+    .contemporaryPhoto figcaption h2 {
+        display: none;
+    }
+
+
+
+
+
+    /** Make the textbox*/
+
+    .lbl-toggle {
+        display: block;
+        height: 55px;
+        font-family: 'Aboreto';
+        font-size: 2rem;
+        font-weight: 600;
+        text-shadow: none;
+        text-transform: uppercase;
+        text-align: center;
+        padding-top: 12.5px;
+        color: #e0cbcb;
+        background: #8D7878;
+        cursor: pointer;
+        border-top-left-radius: 7px;
+        border-top-right-radius: 7px;
+        transition: all 0.25s ease-out;
+    }
+
+    .lbl-toggle:hover {
+        color: #f0e6e6;
+        background: #7c6868;
+    }
+
+    .lbl-toggle::before {
+        content: ' ';
+        display: inline-block;
+
+        /* this creates the little triangle */
+        border-top: 7px solid transparent;
+        border-bottom: 7px solid transparent;
+        border-left: 7px solid currentColor;
+
+        vertical-align: middle;
+        margin-right: .7rem;
+        transform: translateY(-2px);
+        transition: transform .2s ease-out;
+    }
+
+    .collapsible-content .content-inner {
+        background: rgba(232, 220, 220, 0.9);
+        border-bottom: 1px solid rgba(250, 224, 66, .45);
+        border-bottom-left-radius: 7px;
+        border-bottom-right-radius: 7px;
+        padding: .5rem 1rem;
+    }
+
+    .content-inner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    /** Collapse the textbox */
+    .collapsible-content {
+        max-height: 0px;
+        overflow: hidden;
+        transition: max-height .25s ease-in-out;
+    }
+
+    /**Expand the textbox(collapsible-content)*/
+    .toggle:checked+.lbl-toggle+.collapsible-content {
+        max-height: 500px;
+    }
+
+    .toggle:checked+.lbl-toggle::before {
+        transform: rotate(90deg) translateX(-3px);
+        /** Rotate the little triangle */
+    }
+
+    .toggle:checked+.lbl-toggle {
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+
+
+
+}
+
+
+
+
+
+
+
+#insicon {
+    width: 19px;
+    height: 19px;
+    float: right;
+    z-index: 4;
+    bottom: 10px;
+    position: absolute;
+}
+
+
+
+/* Set the margin of footer */
+.footer {
+    /* width: 960px;
+    height: 100px; */
+    width: 86%;
+    height: auto;
+    padding-top: 40px;
+    margin: 0 auto;
+    text-align: center;
+    clear: both;
+}
+
+.icon {
+    width: 37px;
+    height: 59px;
+    float: inline-end;
+    margin: 10px 20px 20px 0;
+    /* visibility: hidden; */
+}

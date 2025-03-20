@@ -1,0 +1,507 @@
+/* Here is my css！！！*/
+
+/* Set background color */
+/* body {
+    background-color: #f3ecee;
+} */
+
+.reflesh {
+    background-color: #F3ECEE;
+}
+
+/* Eliminate Margins */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Set the header style */
+.header {
+    background-color: #CABCBC;
+    opacity: 0.98;
+    width: 100%;
+    /* Fixed header at the top */
+    position: fixed;
+    /* top: 0px; */
+    padding-top: 10px;
+    z-index: 10;
+
+}
+
+/* Set the header “Balllet Lover” format */
+.header1 {
+    text-align: center;
+    margin-right: 15%;
+    margin-bottom: 10px;
+    /* padding-right: 30%;
+    padding-left: 27%; */
+    color: black;
+    font-size: x-large;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    z-index: 5;
+}
+
+
+
+#playicon {
+
+    margin-top: 9px;
+    margin-right: 10px;
+    width: 40px;
+    height: 40px;
+    color: white;
+    font-size: 2em;
+    float: right;
+
+    display: none;
+
+}
+
+
+
+
+#logo {
+    width: 200px;
+    height: 59px;
+    float: left;
+    margin-left: 10px;
+}
+
+.rotateBox {
+    width: 38px;
+    height: 59px;
+    float: right;
+    margin-right: 20px;
+    transform: rotateY(0);
+    animation: spinning 4s linear infinite;
+}
+
+@keyframes spinning {
+
+    0% {
+
+        transform: rotateY(0deg);
+
+    }
+
+    50% {
+
+        transform: rotateY(360deg);
+
+    }
+
+    100% {
+
+        transform: rotateY(720deg);
+
+    }
+}
+
+/* The following is the navigation on big/small screen */
+/* [ON BIG SCREEN!] */
+/* WRAPPER */
+#hamnav {
+    width: 100%;
+
+    z-index: 1;
+    -webkit-user-select: none;
+    user-select: none;
+    position: relative;
+    display: block;
+}
+
+/* HIDE HAMBURGER & Put it on right */
+#hamnav label,
+#hamburger {
+    display: none;
+    float: right;
+}
+
+
+
+.nav {
+    padding-left: 12%;
+}
+
+/* Set the father labels style  */
+.nav li {
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    /* margin-left: 176px; */
+    margin-left: 5%;
+    margin-right: 5%;
+    float: left;
+    list-style: none;
+    color: black;
+    text-align: center;
+}
+
+/* Set the position */
+ul {
+    margin-top: 0px;
+    background-color: #8D7878;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+/* Set the son labels style */
+.nav ul li {
+    margin-top: 0px;
+    margin-bottom: 5px;
+    padding-left: 16px;
+    padding-right: 18px;
+    float: none;
+    text-decoration-color: black;
+    text-decoration-line: none;
+}
+
+/*hidden the sublist*/
+.nav ul {
+    margin-top: 8px;
+    display: none;
+    position: absolute;
+    background: #978686;
+    opacity: 0.98;
+}
+
+/* display the sublist*/
+.nav li:hover ul {
+    display: block;
+}
+
+
+/* change the decoration & color of text */
+.nav a {
+    text-decoration: none;
+    color: #eaebed;
+}
+
+.nav ul li a {
+    text-decoration: none;
+    color: #f3ecee;
+}
+
+.now a {
+    color: #fbf9fa;
+    font-weight: 600;
+    text-shadow: 2px 1px 5px #eba1e9;
+    font-size: large;
+}
+
+.clearnow a {
+    color: #eaebed;
+    font-weight: 400;
+    text-shadow: none;
+    font-size: 16px;
+}
+
+/* change the font situation while the href is hover  */
+.nav a:hover {
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+
+
+/* [ON SMALL SCREENS!] */
+@media screen and (max-width: 1024px) {
+
+    #hamnav input {
+        display: block;
+        width: 40px;
+        height: 35px;
+        position: absolute;
+        /* top: -7px; */
+        top: -50px;
+        right: 12px;
+
+        cursor: pointer;
+
+        opacity: 0;
+        /* hide this */
+        z-index: 2;
+        /* and place it over the hamburger */
+
+        -webkit-touch-callout: none;
+    }
+
+    /* BREAK INTO VERTICAL MENU */
+    #hamitems a {
+        box-sizing: border-box;
+        display: grid;
+        width: 100%;
+    }
+
+    /* (B) SHOW HAMBURGER ICON */
+    /* #hamnav label {
+        display: inline-block;
+        color: white;
+        background: #a02620;
+        font-style: normal;
+        font-size: 1.2em;
+        padding-left: 10px;
+        padding-top: 5px;
+        padding-right: 10px;
+        padding-bottom: 6px;
+    } */
+
+
+    /* (C) TOGGLE SHOW/HIDE MENU */
+    #hamitems {
+        display: none;
+        background-color: rgba(255, 255, 255, 0.8);
+
+        animation-duration: 1.3s;
+        animation-name: slidein;
+    }
+
+    @keyframes slidein {
+        from {
+            margin-top: 5%;
+            height: 20%;
+            margin-right: -30%;
+            width: 150%;
+        }
+
+        to {
+            margin-top: 0%;
+            height: 100%;
+            margin-right: 0%;
+            width: 100%;
+        }
+    }
+
+    #hamnav input:checked~#hamitems {
+        display: grid;
+    }
+
+    #playicon {
+        display: block;
+    }
+
+    .rotateBox {
+        width: 38px;
+        height: 59px;
+        float: left;
+        margin-right: 20px;
+        transform: rotateY(0);
+        animation: spinning 5s linear infinite;
+    }
+
+    .header1 {
+        margin-right: 25%;
+    }
+}
+
+/* max-width: 680px */
+@media screen and (max-width: 863px) {
+
+    #hamnav input {
+        display: block;
+        width: 40px;
+        height: 35px;
+        position: absolute;
+        /* top: -7px; */
+        top: -110px;
+        right: 15px;
+
+        cursor: pointer;
+
+        opacity: 0;
+        /* hide this */
+        z-index: 2;
+        /* and place it over the hamburger */
+
+        -webkit-touch-callout: none;
+    }
+}
+
+
+h1 {
+    font-size: 48px;
+    color: #4b4141;
+    font-family: 'Aboreto';
+}
+
+h2 {
+    font-size: 32px;
+    font-weight: 600;
+
+    font-family: 'Aboreto';
+    padding-bottom: 8px;
+}
+
+h4 {
+    font-size: 20px;
+    font-weight: 580;
+    font-family: Poppins;
+    padding-top: 12px;
+    padding-bottom: 2px;
+}
+
+h5 {
+    font-size: 18px;
+    font-weight: 540;
+    font-family: 'Gotu', sans-serif;
+    padding-bottom: 2px;
+}
+
+h6 {
+    font-size: 16px;
+    font-weight: 700;
+    font-family: 'Gotu', sans-serif;
+}
+
+h3 {
+    font-size: 16px;
+    font-weight: 100;
+    font-family: 'Julius Sans One', sans-serif;
+}
+
+p {
+    font-family: 'Gotu', sans-serif;
+}
+
+
+
+/* Set the overall margin of center  */
+.center {
+    /* margin-left: 100px;
+    margin-right: 100px; */
+    margin-left: 7%;
+    margin-right: 7%;
+    margin-top: 0px;
+}
+
+.video iframe {
+    width: 80%;
+    height: 557px;
+}
+
+@media only screen and (max-width: 1000px) {
+    .video iframe {
+        height: 400px;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .video iframe {
+        height: 300px;
+    }
+}
+
+#commentText {
+    /* width: 96%; */
+    width: 100%;
+    height: 165px;
+    overflow-y: auto;
+    background-color: #e0d4d4;
+    border-radius: 5px;
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.commentName {
+    font-size: 18px;
+    font-weight: 600;
+
+}
+
+.commentDetails {
+    font-size: 14px;
+}
+
+#writeArea {
+    border: 1px dashed #c3c3cc;
+    position: relative;
+    text-align: center;
+    color: #8D7878;
+    margin-top: 10px;
+}
+
+#writeDown {
+    width: 100%;
+    height: 85px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    font-family: 'Gotu', sans-serif;
+    color: #6c5c5c;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+:placeholder-shown {
+    text-align: center;
+    font-family: 'Gotu', sans-serif;
+}
+
+
+.control_wrapper {
+    width: 80%;
+    margin: auto;
+    margin-top: 40px;
+    font-family: 'Lato', sans-serif;
+
+}
+
+#drop {
+    font-size: 20px;
+    letter-spacing: 1px;
+    word-spacing: 2px;
+}
+
+#dropArea {
+    border: 1px dashed #c3c3cc;
+    position: relative;
+    text-align: center;
+    padding: 20px 0 10px;
+    color: #8D7878;
+}
+
+
+
+@media only screen and (max-width: 800px) {
+
+    #dropArea .e-upload .e-upload-files,
+    .e-bigger #dropArea .e-upload .e-upload-files {
+        padding: 18px 25px 18px 12px;
+    }
+}
+
+
+
+#insicon {
+    width: 19px;
+    height: 19px;
+    float: right;
+    z-index: 4;
+    bottom: 10px;
+    position: absolute;
+}
+
+
+
+/* Set the margin of footer */
+.footer {
+    width: 86%;
+    height: auto;
+    padding-top: 40px;
+    margin: 0 auto;
+    text-align: center;
+    clear: both;
+}
+
+.icon {
+    width: 37px;
+    height: 59px;
+    float: inline-end;
+    margin: 10px 20px 20px 0;
+    /* visibility: hidden; */
+}
